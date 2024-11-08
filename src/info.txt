@@ -1,0 +1,53 @@
+create project -
+nest new project-name
+
+to watch changes -
+npm run start:dev
+
+main.ts -
+entry of app
+start server
+nest factory of app.module
+other configurations like cors, static files
+
+
+app.module.ts -
+main module 
+every module need to connect this module
+root app.controller, app.providers  and other imported modules
+
+controller -
+to handle request
+
+service -
+to create logic
+
+module -
+have controller and service
+
+entity -
+to create modules
+
+controller.spec -
+testing
+
+module class -
+module class decorated with @Module decorator
+
+crete module using CLI -
+nest g module users
+
+Decorators -
+Get(), Post(), Put(), Delete()
+
+pipes -
+validate data before reach to controller
+convert data from one format to another
+
+dto -
+to create validations
+install class-validator
+install class-transformer
+
+global pipe:
+to add pipe globally--> in 
