@@ -10,6 +10,7 @@ export class CreateUserDto{
     @MinLength(3, {message:"min length is 3 char"})
     name:string;
 
+
     @IsEmail()
     email:string;
 
@@ -19,4 +20,7 @@ export class CreateUserDto{
 
     @IsBoolean()
     isMarried:boolean;
+
+    @IsString()
+    password:string;
 }

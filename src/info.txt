@@ -51,3 +51,33 @@ install class-transformer
 
 global pipe:
 to add pipe globally--> in 
+
+
+
+
+
+
+
+
+
+
+
+
+
+architectures
+modules
+injections
+Decorators
+providers
+pipes 
+
+gaurd
+interceptors
+
+middleware
+
+typeorm
+relationship
+
+exception handling
+configuration management
