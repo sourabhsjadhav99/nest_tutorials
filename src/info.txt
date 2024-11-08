@@ -44,7 +44,7 @@ pipes -
 validate data before reach to controller
 convert data from one format to another
 
-dto -
+dto - need to give pipes for working dto
 to create validations
 install class-validator
 install class-transformer

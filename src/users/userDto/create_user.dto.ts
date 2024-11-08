@@ -1,6 +1,6 @@
 import { IsBoolean, IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString, MinLength } from "class-validator";
 
-export class Create_user_dto{
+export class CreateUserDto{
 
     @IsNumber()
     id:number;

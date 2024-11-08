@@ -8,28 +8,29 @@ import {
   Patch,
   Post,
   Query,
+  UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { Create_user_dto } from './use_dto/create_user.dto';
-import { GetUserParamDto } from './use_dto/get-user-param.dto';
-import { UpdateUserDto } from './use_dto/update-user.dto';
+import { CreateUserDto } from './userDto/create_user.dto';
+import { GetUserParamDto } from './userDto/get-user-param.dto';
+import { UpdateUserDto } from './userDto/update-user.dto';
 
 @Controller('users')
 export class UsersController {
-  constructor(private usersService:UsersService){
+  constructor(private readonly usersService:UsersService){
 
   }
-  @Get("/")
-  getUser() {
-    return this.usersService.getUsers()
-  }
+  // @Get("/")
+  // getUser() {
+  //   return this.usersService.getUsers()
+  // }
 
-  @Get('/:id')
-  getUserById(@Param('id') id: number){
+  // @Get('/:id')
+  // getUserById(@Param('id') id: number){
  
-      return this.usersService.getUserById(+id);
-  }
+  //     return this.usersService.getUserById(+id);
+  // }
 
   // @Get(':id/:gender')
   // getUserByIdandGender(@Param() params: number){
@@ -55,20 +56,20 @@ export class UsersController {
   //     return user.getUserById(+id);
   //   }
 
-    @Post()
-    @UsePipes(Validation)
-  //   createUser(@Body(new ValidationPipe()) user:Create_user_dto) {
-      createUser(@Body() user:Create_user_dto) { // added globally
-      // implement creating a user
-    }
+  //   @Post()
+  //   // @UsePipes(ValidationPipe) 1 way
+  // //   createUser(@Body(new ValidationPipe()) user:CreateUserDto) { // 2nd way
+  //     createUser(@Body() user:CreateUserDto) { // added globally  // 3rd way
+  //     // implement creating a user
+  //   }
 
 
     // dto to validate params 
-    @Get(':isMarried?')
-    getUsers(@Param() param: GetUserParamDto){
-       console.log(param)
-       return this.usersService.getUsers()
-    }
+    // @Get(':isMarried?')
+    // getUsers(@Param() param: GetUserParamDto){
+    //    console.log(param)
+    //    return this.usersService.getUsers()
+    // }
 
     // @Patch()
     // updateUser(@Body() user: UpdateUserDto){
@@ -76,5 +77,10 @@ export class UsersController {
     //   return "user updated successfully"
 
     // }
+
+    @Post("/create")
+    async createUser(@Body() user: CreateUserDto) {
+        return await this.usersService.createUser(user);
+    }
   
 }
