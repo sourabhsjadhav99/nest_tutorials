@@ -7,9 +7,9 @@ export const typeOrmConfig:TypeOrmModuleOptions={
     port: 3307,
     username: 'root',
     password: 'Sourabh@1999',
-    database: 'nest',
+    database: 'nest_1',
     autoLoadEntities: false,
     entities: [User],
     synchronize: true,
-    logging: true,
+    logging: true
 }

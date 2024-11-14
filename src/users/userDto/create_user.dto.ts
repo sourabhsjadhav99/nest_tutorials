@@ -8,19 +8,11 @@ export class CreateUserDto{
     @IsString()
     @IsNotEmpty()
     @MinLength(3, {message:"min length is 3 char"})
-    name:string;
-
-
-    @IsEmail()
-    email:string;
-
-    @IsString()
-    @IsOptional()
-    gender?:string;
-
-    @IsBoolean()
-    isMarried:boolean;
+    username:string;
 
     @IsString()
     password:string;
+
+    @IsString()
+    role:string
 }

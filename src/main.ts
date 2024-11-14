@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { ResponseInterceptor } from './interceptors/response.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -9,6 +10,9 @@ async function bootstrap() {
     forbidNonWhitelisted: true, // to throw error for unknown properties
     transform: true // to make instance of dto
   }))
-  await app.listen(process.env.PORT ?? 3000);
+
+  app.useGlobalInterceptors(new ResponseInterceptor());
+  
+  await app.listen(process.env.PORT ?? 4000);
 }
 bootstrap();

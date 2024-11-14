@@ -81,3 +81,11 @@ relationship
 
 exception handling
 configuration management
+
+
+interceptors:
+controls request and response
+
+guards
+protest request to go on perticular route
+can use for autherisation
